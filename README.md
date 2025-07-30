@@ -1,4 +1,4 @@
-## 🧾 Insurance Premium Prediction using Machine Learning
+## 🧾 Insurance Premium Prediction
 
 This project aims to predict insurance premium charges using machine learning models based on an individual’s demographic and lifestyle attributes. The dataset includes information such as age, BMI, number of children, region, sex, and smoking status. The goal is to build interpretable models that help identify key drivers of insurance costs and make accurate predictions.
 
