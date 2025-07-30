@@ -1,11 +1,11 @@
-## 🧾 Insurance Premium Prediction
+## 🧾 Insurance Premium Prediction using Machine Learning
 
 This project aims to predict insurance premium charges using machine learning models based on an individual’s demographic and lifestyle attributes. The dataset includes information such as age, BMI, number of children, region, sex, and smoking status. The goal is to build interpretable models that help identify key drivers of insurance costs and make accurate predictions.
 
 
 ### 📁 Dataset
 
-* The dataset used is from [Kaggle's US Health Insurance Dataset](https://www.kaggle.com/datasets/teertha/ushealthinsurancedataset/data).
+* The dataset used is from Kaggle's [US Health Insurance Dataset](https://www.kaggle.com/datasets/teertha/ushealthinsurancedataset/data).
 * It contains 1,300+ records with the following features:
 
   * `age`: Age of the primary beneficiary
@@ -17,30 +17,25 @@ This project aims to predict insurance premium charges using machine learning mo
   * `charges`: Medical insurance charges (target variable)
 
 
-### 🔍 Exploratory Data Analysis (EDA)
+### 🔄 Data Preprocessing & Feature Engineering
 
-Various univariate and bivariate visualizations were employed to uncover key patterns in the data and highlight relationships between features and the target variable.:
-
-* **Histograms** for Age and BMI distributions
-* **Pie chart** for Smoker status
-* **Bar charts** showing Total Charges and Smoker Counts by Region
-* **Boxplot** for Charges by Smoking status
-* **Violin plot** of Charges by Number of Children
-* **Scatter plots** showing relationships between:
-
-  * Age vs Charges
-  * BMI vs Charges, colored by smoking status
+- Removed outliers using the IQR method to retain meaningful data.
+- Created an `age_group` feature by binning ages into categories (Young, Adult, Middle-aged, Senior).
+- Encoded categorical variables:
+  - One-hot encoding for `region`
+  - Label encoding for `smoker` and `sex`
+- Selected relevant numeric features based on correlation analysis.
 
 
-### 🛠️ Feature Engineering
+### 📊 Exploratory Data Analysis (EDA)
 
-* **Age Group**: Age was binned into categories — Young, Adult, Middle-aged, Senior.
-* **One-hot encoding** was applied to the `region` column.
-* **Label encoding** was used for binary categorical columns: `sex` and `smoker`.
-* Final selected features for modeling:
-
-  * `age`
-  * `smoker_encoded`
+Conducted univariate and bivariate analysis to understand feature distributions and relationships:
+- **Univariate Plots**: Histograms of `age` and `bmi`, pie chart of smoker distribution, count plot of gender.
+- **Bivariate Plots**: 
+  - Scatter plots of `age` vs. `charges` and `bmi` vs. `charges` (colored by smoking status)
+  - Violin plot for `charges` by number of children
+  - Box plot comparing charges for smokers vs non-smokers
+  - Bar plots showing total charges and smoker counts by region
 
 
 ### 📈 Correlation Analysis
